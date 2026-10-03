@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 31.25rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 62rem;
+  --breakpoint-xl: 75rem;
+  --breakpoint-2xl: 90rem;
+
+  --color-primary: #28a745;
+  --color-secondary: #10411b;
+  --color-primary-dark: #218838;
+  --color-primary-darker: #1E7E34;
+  --font-vazir: Vazirmatn, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
