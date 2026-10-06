@@ -16,6 +16,7 @@ import { DatePicker } from "zaman";
 
 function PersonalInformationBox({ data, className }) {
   const [isEditing, setIsEditing] = useState(false);
+  const { isPending, mutate } = useEditProfile();
 
   const {
     control,
@@ -27,23 +28,18 @@ function PersonalInformationBox({ data, className }) {
     resolver: yupResolver(personalInformationBoxSchema),
   });
 
-  const { isPending, mutate } = useEditProfile();
-
   const onSubmit = (data) => {
     if (isPending) return;
 
-    mutate(
-      { ...data },
-      {
-        onSuccess: (data) => {
-          toast.success(data?.data?.message);
-          setIsEditing(false);
-        },
-        onError: (error) => {
-          toast.error(error?.message);
-        },
-      }
-    );
+    mutate(data, {
+      onSuccess: (data) => {
+        toast.success(data?.data?.message);
+        setIsEditing(false);
+      },
+      onError: (error) => {
+        toast.error(error?.message);
+      },
+    });
   };
 
   useEffect(() => {

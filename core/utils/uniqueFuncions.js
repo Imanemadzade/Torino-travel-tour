@@ -1,6 +1,6 @@
 export const getUniqueByKey = (arr, key) => {
   if (!Array.isArray(arr) || !key) return [];
-  
+
   const seen = new Set();
 
   return arr.filter((item) => {

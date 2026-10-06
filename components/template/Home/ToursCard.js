@@ -17,16 +17,14 @@ function ToursCard({
   options,
   origin: { name },
 }) {
- 
-
   return (
     <section className="w-full  mb-8.75  rounded-[10px]  shadow-[0_0_2px_#00000025] flex flex-col  ">
       <Image
         src={getImageUrl(image)}
-        width={1000}
-        height={1000}
+        width={400}
+        height={300}
         alt={`${name} picture`}
-        className="w-full aspect-4/3 object-cover mb-2  "
+        className="w-full aspect-4/3 object-cover mb-2"
       />
       <div>
         <h3 className="mb-1.5 mr-2.5 text-[22px] font-normal ">{title}</h3>

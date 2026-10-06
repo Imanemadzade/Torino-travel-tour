@@ -44,7 +44,7 @@ const tourDays = (start, end) => {
 const padNumber = (value) => String(value).padStart(2, "0");
 
 const getJalaliDateParts = (date) => {
-  if (!date) return null;
+  if (!date) return "";
 
   const parsedDate = new Date(date);
 
@@ -58,7 +58,7 @@ const getJalaliDateParts = (date) => {
 // toJalaliDateString("2026-07-30")
 // "1405/05/08"
 const toJalaliDateString = (date) => {
-  if (!date) return null;
+  if (!date) return "";
   const jalaliDate = getJalaliDateParts(date);
   if (!jalaliDate) return " ";
 
