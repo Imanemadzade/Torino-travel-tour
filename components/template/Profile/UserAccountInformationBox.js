@@ -31,7 +31,6 @@ function UserAccountInformationBox({ data, className }) {
       { ...data },
       {
         onSuccess: (data) => {
-          console.log(data);
           toast.success(data?.data?.message);
           setIsEditing(false);
         },

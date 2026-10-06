@@ -9,7 +9,6 @@ import MobileSigninIcon from "@/icons/HeaderIcons/MobileSigninIcon";
 function HeaderLeftMenu() {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const { data: user } = useGetUserData();
-
   useEffect(() => {
     setIsOpenModal(true);
   }, []);

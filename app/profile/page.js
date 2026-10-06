@@ -9,12 +9,14 @@ import Loader from "components/common/Loader";
 function ProfilePage() {
   const { data, isPending } = useGetUserData();
   if (isPending)
-    <Loader
-      className="w-full h-full flex justify-center items-center "
-      width="50px"
-      height="50px"
-      color="#28A745"
-    />;
+    return (
+      <Loader
+        className="w-full h-full flex justify-center items-center "
+        width="50px"
+        height="50px"
+        color="#28A745"
+      />
+    );
   return (
     <div className="flex flex-col gap-5 lg:mt-9.25">
       <UserAccountInformationBox
