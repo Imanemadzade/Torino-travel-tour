@@ -33,7 +33,10 @@ function UserAccountMenu({
   const exitHandler = () => {
     removeCookie("accessToken");
     removeCookie("refreshToken");
+    console.log(queryClient.getQueryData(["user-data"]));
     queryClient.removeQueries(["user-data"]);
+    console.log(queryClient.getQueryData(["user-data"]));
+
     setIsOpenDash(false);
     router.push("/");
   };
@@ -55,7 +58,7 @@ function UserAccountMenu({
       </span>
 
       {isOpenDash && (
-        <div className="z-10 absolute top-13 -left-[5.5px]  w-39.25   text-[12px] rounded-[11px] bg-[#ffffff] md:w-61.5 md:h-37.75 md:text-[14px] md:font-normal md:gap-2 md:-left-8.25 shadow-[0_1px_4px_#00000016]">
+        <div className="z-10 absolute top-13 -left-[5.5px]  w-39.25   text-[12px] rounded-[11px] bg-[#ffffff] md:w-61.5  md:text-[14px] md:font-normal md:-left-8.25 shadow-[0_1px_4px_#00000016] overflow-hidden">
           <div className="bg-[#F4F4F4] text-[14px] rounded-t-[11px] h-11 flex justify-center  items-center gap-3 md:justify-start md:pr-4.5 md:text-[16px] md:font-semibold  ">
             <span className="w-7 h-7  bg-[#D9D9D9] rounded-full flex justify-center items-center ">
               <ProfileIcon className="size-4 md:size-5" />
@@ -68,7 +71,7 @@ function UserAccountMenu({
             <button onClick={profileHandler}>اطلاعات حساب کاربری</button>
           </div>
 
-          <div className="h-9.25 gap-2 text-[#D40000] flex justify-center  items-center border-t border-[#0000001F] hover:bg-gray-200 md:pr-5.5 md:justify-start">
+          <div className="h-9.25 gap-2 text-[#D40000] flex justify-center  items-center border-t border-[#0000001F] hover:bg-gray-200 md:pr-5.5 md:h-13.75 md:justify-start">
             <ExitUserAccountIcon className="size-4 md:size-5" />
 
             <button onClick={exitHandler}>خروج از حساب کاربری</button>
