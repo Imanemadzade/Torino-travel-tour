@@ -38,9 +38,7 @@ const useCheckout = () => {
 
 const useEditProfile = () => {
   const queryClient = useQueryClient();
-  const mutationFn = (data) => {
-    api.put("/user/profile", data);
-  };
+  const mutationFn = (data) => api.put("/user/profile", data);
 
   return useMutation({
     mutationFn,
